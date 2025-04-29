@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>netflix</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script> 
+    <link rel="stylesheet" href="style.css">
+  </head>
     <script>
         tailwind.config ={
             theme: {
@@ -22,7 +30,7 @@
       // => @media (min-width: 1280px) { ... }
 
       '2xl': '1536px',
-      // => @media (min-width: 1536px) { ... }
+      // => @media (min-width: 1536px) { ... } 
     }
   }
         }
@@ -30,75 +38,216 @@
 </head>
 <body>
     <!--banner section starts-->
-    <section class="w-[100%] h-[100vh] bg-[url('IN-en-20250113-TRIFECTA-perspective_febfa442-23d9-45f3-937e-72f8b971f7a9_large.jpg')] bg-center bg-cover">
-        <div class="w-[100%] h-[100vh] bg-[rgba(0,0,0,0.7)]">
-            <header class="max-w-[1170px] mx-auto grid sm:grid-cols-2 grid-cols-[30%_auto] px-[10px] sm:grid-cols-[40%_auto]">
-                <figure class="py-[20px]">
-                    <img src="adobe-light-room-cc-svgrepo-com.svg" class="lg:w-[40px] sm:w-[40px] text-red-600 ">
-                </figure>
-                <div class="py-[20px] flex justify-end">
-                    <button class=" text-[whitesmoke]">
-                        <select name="english" id="option" class="bg-[rgba(32,18,12,0.3)] px-6 py-1 rounded border">
-                            <option value="English">English</option>
-                            <option value="Hindi">Hindi</option>
-                        </select>
-                    </button>
-                    <button class="bg-red-600 text-white mx-[8px] px-4 py-1 border-red-600 rounded-3xl">
-                        <p class="text-[15px]">Sign-in</p>
-                    </button>
-                </div>
-            </header>
-            <div class="max-w-[1170px] mx-auto sm:py-[150px] py-[50px] text-center">
-                <h1 class="lg:text-[50px] md:text-[35px] text-[20px] font-bold text-white ">Unlimited movies, TV shows and more</h1>
-                <h4 class="text-[20px] py-[20px] text-white">Starts at ₹99. Cancel at any time.</h4>
-                <p class="text-[15px] text-white">Ready to watch? Enter your movie to watch.</p>
-                <div class="max-w-[500px] sm:px-[20px] px-[40px] mx-auto mt-[30px]">
-                    <form action="#" class="grid sm:grid-cols-[70%_auto] grid-cols-1">
-                        <input type="email" name="Email" id="E" placeholder="Enter the movie name" class="bg-transparent border-[1px] border-[#ccc] h-[50px] p-[8px] rounded ">
-                        <button class="text-white border-[1px] ml-[10px] rounded bg-[red] border-red-700 sm:my-[0px] my-[30px] h-[50px] hover:bg-[rgb(193, 17, 25)]">Search</button>
-                    </form>
-                </div>
+    <div class="w-[100%] bg-[rgba(0,0,0,0.9)]">
+        <div class="w-[100%]">
+            <div class="max-w-[1170px] mx-auto py-[15px]">
+                <header class="head">
+                    <div class="head-text">
+                        <a href="#"><h3 class="text-bold text-3xl font-bold text-red-600">LTF</h3></a>
+                    </div>
+                    <div class="head-list hl">
+                        <ul class="unordered-list ul">
+                            <li class="items"><a href="#">Movies</a></li>
+                            <li class="items"><a href="#">About Us</a></li>
+                            <li class="items"><button class="btn">Subscribe</button></li>
+                        </ul>
+                        <span class="ml-[30px] lg:hidden sm:block" id="menu-icon"><ion-icon name="menu-outline"></ion-icon></span>
+                    </div>
+                    <div class="search-box">
+                        <input type="text" class="search-input" placeholder="Search" id="search-input">
+                        <span class="search-icon"><ion-icon name="search-outline"></ion-icon></span>
+                    </div>
+                </header>
+                <nav id="mobile-menu" class="hidden">
+                    <ul>
+                        <li><a href="#">Movies</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><button class="btn">Subscribe</button></li>
+                        <li><input type="text" class="search-input" placeholder="Search" id="search-input">
+                            <span class="search-icon"><ion-icon name="search-outline"></ion-icon></span></li>
+                    </ul>
+                </nav>
             </div>
-        </div>
-        <div class="default-ltr-cache-1f97ztc"></div>
-    </section>
+        </div>    
+    </div>
     <!--banner section ends-->
+    <!--carousel section starts-->
+    <div class="w-[100%] lg:h-[100vh] sm:h-[50vh] grid place-items-center lg:my-[0px] sm:py-[20px] bg-[rgba(0,0,0,0.9)]">
+        <div class="image-slider rounded-[8px]"></div>
+    </div>
+    <!--carousel section ends-->
     <!--content section starts -->
-    <div class="w-[100%] bg-[rgba(0,0,0,1.0)]">
+    <div class="w-[100%] bg-[rgba(0,0,0,0.9)]">
         <div class="max-w-[1170px] mx-auto">
             <div class="max-w-[700px]">
                 <p class="text-xl text-white py-[15px] px-[10px]">Trending Now</p>
             </div>
             <div class="max-w-[700px] flex py-[10px]">
                 <div class="pl-[10px]">
-                    <select name="India" id="I" class="px-4 py-1 rounded border bg-black  text-white border border-white-600">
+                    <select name="India" id="I" class="px-4 py-1 rounded border bg-[rgba(0,0,0,0.9)]  text-white border border-white-600">
                         <option value="India">India</option>
                         <option value="Global">Global</option>
                     </select>
                 </div>
                 <div class="pl-[10px]">
-                    <select name="movies" id="m" class="px-4 py-1 rounded border bg-black text-white border border-white-600">
+                    <select name="movies" id="m" class="px-4 py-1 rounded border bg-[rgba(0,0,0,0.9)] text-white border border-white-600">
                         <option value="Movies">Movies</option>
                         <option value="Tv-shows">Tv-shows</option>
                     </select>
                 </div>
             </div>
         </div>
-        <div class="max-w-[1170px] mx-auto lg:px-[30px] md:px-[30px] sm:px-[100px] grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-1 gap-6">
-            <div class="py-[20px] ">
-                    <img src="photo1.webp" class="rounded-[8px] hover:scale-110 hover:cursor-pointer duration-1000">
+       <div class="max-w-[1170px] mx-auto lg:px-[30px] md:px-[30px] sm:px-[100px] grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-1 gap-6 box-container">
+          <div class="py-[20px] hover:scale-110 hover:cursor-pointer duration-1000 box">
+            <img src="./chowrongiee.jpg" class="rounded-[10px] w-[100%]">
+            <div>
+                <h5 class="text-2xl font-medium text-white py-[8px]">Chowringhee</h5>
+                <p class="text-white text-left text-[13px]">Chowringhee (1968) is a Bengali film depicting the lives, struggles, and emotions of hotel staff and guests in Kolkata.</p>
+                <button class="btn1 mt-[12px]" onclick="toggle()">Watch Now</button>
+                <div class="video">
+                    <video src="./ONE PIECE - Episode 1000 Special Opening - We Are!.mp4" controls="true" ></video>
+                    <ion-icon name="close-outline" class="close" onclick="toggle()"></ion-icon>
+                 </div>
             </div>
-            <div class="py-[20px]">
-                <img src="photo 2.webp" class="rounded-[8px] hover:cursor-pointer  hover:scale-110 duration-1000">
+          </div>
+          <div class="py-[20px] hover:scale-110 hover:cursor-pointer duration-1000 box">
+            <img src="./bindass.jpg" class="rounded-[10px] w-[100%]">
+            <div>
+                <h5 class="text-2xl font-medium text-white py-[8px]">Bindass</h5>
+                <p class="text-white text-left text-[13px]">Bindass (2004) is a Bengali thriller about a young woman entangled in a dangerous conspiracy, starring Koel Mallick.</p>
             </div>
-            <div class="py-[20px]">
-                <img src="photo 3.webp" class="rounded-[8px] hover:cursor-pointer  hover:scale-110 duration-1000">
+          </div>
+          <div class="py-[20px] hover:scale-110 hover:cursor-pointer duration-1000 box">
+            <img src="./Awaraa.jpg" class="rounded-[10px] w-[100%]">
+            <div>
+                <h5 class="text-2xl font-medium text-white py-[8px]">Awaraa</h5>
+                <p class="text-white text-left text-[13px]">Awara (2012) is a Bengali action-romance where Jeet’s character fights for love, blending humor, drama, and action.</p>
             </div>
-            <div class="py-[20px]">
-                <img src="photo 4.webp" class="rounded-[8px] hover:cursor-pointer hover:scale-110 duration-1000">
+          </div>
+          <div class="py-[20px] hover:scale-110 hover:cursor-pointer duration-1000 box">
+            <img src="./i love you.jpg" class="rounded-[10px] w-[100%]">
+            <div>
+                <h5 class="text-2xl font-medium text-white py-[8px]">I Love You</h5>
+                <p class="text-white text-left text-[13px]">I Love You (2007) is a Bengali romantic drama directed by Ravi Kinagi, starring Dev and Payel Sarkar. It tells a heartfelt story of love, challenges, and emotional reunions.</p>
             </div>
-            <div class="py-[20px]">
-                <img src="photo 5.webp" class="rounded-[8px] hover:cursor-pointer hover:scale-110 duration-1000">
+          </div>
+          <div class="py-[20px] hover:scale-110 hover:cursor-pointer duration-1000 box">
+            <img src="./jibon-trisha.jpg" class="rounded-[10px] w-[100%]">
+            <div>
+                <h5 class="text-2xl font-medium text-white py-[8px]">Jibon Trishna</h5>
+                <p class="text-white text-left text-[13px]">Jibon Trishna is a Bengali drama that explores human desires, emotional struggles, and complex relationships against a backdrop of societal challenges.</p>
+            </div>
+          </div>
+          <div class="py-[20px] hover:scale-110 hover:cursor-pointer duration-1000 box">
+            <img src="./khaddan.jpg" class="rounded-[10px] w-[100%]">
+            <div>
+                <h5 class="text-2xl font-medium text-white py-[8px]">Khaddan</h5>
+                <p class="text-white text-left text-[13px]">Khadaan (2024) is a Bengali action thriller directed by Soojit Dutta, starring Dev in dual roles alongside Jisshu Sengupta.</p>
+            </div>
+          </div>
+          <div class="py-[20px] hover:scale-110 hover:cursor-pointer duration-1000 box">
+            <img src="./sobar-upore.jpg" class="rounded-[10px] w-[100%]">
+            <div>
+                <h5 class="text-2xl font-medium text-white py-[8px]">Sobar Upore</h5>
+                <p class="text-white text-left text-[13px]">Sabar Uparey (Bengali: সবার উপরে) is a 1955 Indian Bengali-language crime thriller film produced by M.P Production Private Ltd and directed by Agradoot, based on A.J. Cronin's 1953 novel, Beyond This Place.</p>
+            </div>
+          </div>
+          <div class="py-[20px] hover:scale-110 hover:cursor-pointer duration-1000 box">
+            <img src="./villan.jpg" class="rounded-[10px] w-[100%]">
+            <div>
+                <h5 class="text-2xl font-medium text-white py-[8px]">Villan</h5>
+                <p class="text-white text-left text-[13px]">Villain"narrates the story of Raja, the protagonist, whose life takes an unknown turn when he meets his lookalike Joy, that leads to a series of incidents that follow due to the exchanged identities</p>
+            </div>
+          </div>
+          <div class="py-[20px] hover:scale-110 hover:cursor-pointer duration-1000 box">
+            <img src="./ogo-bidesini.jpg" class="rounded-[10px] w-[100%]">
+            <div>
+                <h5 class="text-2xl font-medium text-white py-[8px]">Ogo Bideshini</h5>
+                <p class="text-white text-left text-[13px]">Ogo Bideshini (2022) is a Bengali romantic comedy directed by Anshuman Pratyush. The film stars Ankush Hazra as Anath Bandhu (AB) and Alexandra Taylor as Suzzane</p>
+            </div>
+          </div>
+          <div class="py-[20px] hover:scale-110 hover:cursor-pointer duration-1000 box">
+            <img src="./dui-pritibi.jpg" class="rounded-[10px] w-[100%]">
+            <div>
+                <h5 class="text-2xl font-medium text-white py-[8px]">Dui Prithibi</h5>
+                <p class="text-white text-left text-[13px]">Dui Prithibi (2010) is a Bengali road drama about love, adventure, and self-discovery.</p>
+            </div>
+          </div>
+          <div class="py-[20px] hover:scale-110 hover:cursor-pointer duration-1000 box">
+            <img src="./power.jpg" class="rounded-[10px] w-[100%]">
+            <div>
+                <h5 class="text-2xl font-medium text-white py-[8px]">Power</h5>
+                <p class="text-white text-left text-[13px]">Power (2016) is a Bengali action-comedy film directed by Rajiv Kumar Biswas. The movie stars Jeet, Sayantika Banerjee, and Nusrat Jahan.</p>
+            </div>
+          </div>
+          <div class="py-[20px] hover:scale-110 hover:cursor-pointer duration-1000 box">
+            <img src="./ami se oshokha.jpg" class="rounded-[10px] w-[100%]">
+            <div>
+                <h5 class="text-2xl font-medium text-white py-[8px]">Ami se Oshokha</h5>
+                <p class="text-white text-left text-[13px]">The Bengali film Ami Shey O Sakha (1975) is a classic romantic drama directed by Mangal Chakraborty. The film stars Uttam Kumar, Arati Bhattacharya, and Anil Chatterjee.</p>
+            </div>
+          </div>
+          <div class="py-[20px] hover:scale-110 hover:cursor-pointer duration-1000 box">
+            <img src="./prithibi amake chai.jpg" class="rounded-[10px] w-[100%]">
+            <div>
+                <h5 class="text-2xl font-medium text-white py-[8px]">Prithibi Amare Chai</h5>
+                <p class="text-white text-left text-[13px]">Prithibi Amare Chai (1957) is a Bengali romantic drama directed by Niren Lahiri, starring Uttam Kumar and Mala Sinha. The film tells the story of Tapash, a singer who falls in love with Rina, a woman with a tragic past.</p>
+            </div>
+          </div>
+          <div class="py-[20px] hover:scale-110 hover:cursor-pointer duration-1000 box">
+            <img src="./kaler achar.webp" class="rounded-[10px] w-[100%]">
+            <div>
+                <h5 class="text-2xl font-medium text-white py-[8px]">Kuler Achar</h5>
+                <p class="text-white text-left text-[13px]">Kuler Achaar (2022) is a Bengali family drama directed by Sudeep Das. The film stars Madhumita Sarcar as Mithi, a young woman who refuses to change her surname after marriage, leading to tension with her orthodox in-laws.</p>
+            </div>
+          </div>
+          <div class="py-[20px] hover:scale-110 hover:cursor-pointer duration-1000 box">
+            <img src="./bibhao obhijan.jpg" class="rounded-[10px] w-[100%]">
+            <div>
+                <h5 class="text-2xl font-medium text-white py-[8px]">Bibhao Obhijan</h5>
+                <p class="text-white text-left text-[13px]">Bibaho Obhijaan (2019) is a Bengali comedy-drama directed by Birsa Dasgupta.</p>
+            </div>
+          </div>
+          <div class="py-[20px] hover:scale-110 hover:cursor-pointer duration-1000 box">
+            <img src="./ashur.jpg" class="rounded-[10px] w-[100%]">
+            <div>
+                <h5 class="text-2xl font-medium text-white py-[8px]">Ashur</h5>
+                <p class="text-white text-left text-[13px]">Asur (2020) is a Bengali romantic thriller directed by Pavel Bhattacharjee, featuring Jeet, Abir Chatterjee, and Nusrat Jahan in lead roles. The film pays tribute to renowned sculptor Ramkinkar Baij and draws inspiration from the 2015 Deshapriya Park Durga Puja, which showcased the world's tallest Durga idol. ​</p>
+            </div>
+          </div>
+          <div class="py-[20px] hover:scale-110 hover:cursor-pointer duration-1000 box">
+            <img src="./shantaan.jpg" class="rounded-[10px] w-[100%]">
+            <div>
+                <h5 class="text-2xl font-medium text-white py-[8px]">Shontaan</h5>
+                <p class="text-white text-left text-[13px]">Shontaan (2024) is a Bengali legal drama directed by Raj Chakraborty, featuring Mithun Chakraborty as Saradindu, an elderly father neglected by his affluent son, Indranil (Ritwick Chakraborty).</p>
+            </div>
+          </div>
+          <div class="py-[20px] hover:scale-110 hover:cursor-pointer duration-1000 box">
+            <img src="./commando.jpg" class="rounded-[10px] w-[100%]">
+            <div>
+                <h5 class="text-2xl font-medium text-white py-[8px]">Commando</h5>
+                <p class="text-white text-left text-[13px]">Commando is an upcoming Bengali action-thriller starring Dev, directed by Shamim Ahmed Rony. This Indo-Bangladesh collaboration follows a commando's mission to protect Bangladesh from a looming threat.</p>
+            </div>
+          </div>
+          <div class="py-[20px] hover:scale-110 hover:cursor-pointer duration-1000 box">
+            <img src="./kakababur pratabartan.jpg" class="rounded-[10px] w-[100%]">
+            <div>
+                <h5 class="text-2xl font-medium text-white py-[8px]">Kakababur Pratabartan</h5>
+                <p class="text-white text-left text-[13px]">​Kakababur Protyaborton (2022) is a Bengali action-adventure film directed by Srijit Mukherji, based on Sunil Gangopadhyay’s novel Jongoler Modhye Ek Hotel.</p>
+            </div>
+          </div>
+          <div class="py-[20px] hover:scale-110 hover:cursor-pointer duration-1000 box">
+            <img src="./ghore baire.jpg" class="rounded-[10px] w-[100%]">
+            <div>
+                <h5 class="text-2xl font-medium text-white py-[8px]">Ghore Baire</h5>
+                <p class="text-white text-left text-[13px]">​Ghare Baire (1984), directed by Satyajit Ray, is a Bengali romantic drama based on Rabindranath Tagore's 1916 novel.</p>
+            </div>
+          </div>
+        </div>
+        <div class="flex align-center justify-center py-[20px] w-[100%]">
+            <div class="w-[50%_auto] mx-[10px]">
+                <button class="px-[10px] py-[8px] border border-white rounded-[8px] text-white" id="load-more">Load More</button>
+                <button class="px-[10px] py-[8px] border border-white rounded-[8px] text-white" id="load-less">Load Less</button>
             </div>
         </div>
         <div class="max-w-[1170px] mx-auto sm:px-[15px]">
@@ -228,7 +377,7 @@
     </div>
     <!--content section ends -->
     <!-- fotter section starts -->
-     <div class="w-[100%] bg-[rgba(0,0,0,1.0)]">
+     <div class="w-[100%] bg-[rgba(0,0,0,0.9)]">
         <div class="max-w-[1170px] mx-auto py-[20px]">
             <p class="text-white">Questions? Call <a href="#" class="text-white underline">000-800-919-1743</a></p>
             <div class="w-[100%] mx-auto grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-6 my-[20px] sm:px-[10px]">
@@ -268,5 +417,6 @@
      </div>
      <!-- footer section ends-->
     <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
 </body>
 </html>

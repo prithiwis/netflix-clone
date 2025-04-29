@@ -69,3 +69,46 @@ function myfunction5()
         c.style.display="none";
     }
 }
+
+
+// for navbar
+
+document.getElementById('menu-icon').addEventListener('click', function() {
+    var menu = document.getElementById('mobile-menu');
+    if (menu.style.display=='none') {
+        menu.style.display = 'block';
+    } else {
+        menu.style.display = 'none';
+    }
+});
+
+// for movies load-more and load-lees btn
+
+let loadMoreBtn = document.querySelector('#load-more');
+let loadLessBtn = document.querySelector('#load-less');
+let currentitem=5;
+
+loadMoreBtn.onclick = () => {
+    let boxes = [...document.querySelectorAll('.box-container .box')];
+    for (var i = currentitem; i < currentitem + 5; i++) {
+        boxes[i].style.display = 'inline-block';
+    }
+    currentitem += 5;
+}
+
+loadLessBtn.onclick = () =>{
+    let boxes = [...document.querySelectorAll('.box-container .box')];
+    for (var i = currentitem-1; i > currentitem-6; i--) {
+        boxes[i].style.display = 'none';
+    }
+    currentitem -= 5;
+}
+
+// for pop-up movies watching
+
+function toggle(){
+    var video=document.querySelector(".video");
+    video.classList.toggle("active");
+    video.currentTime=0;
+}
+
